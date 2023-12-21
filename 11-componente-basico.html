@@ -1,0 +1,33 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+<div id="app">
+
+  <hola-mundo></hola-mundo>
+
+  
+</div>
+
+<script>
+  const { createApp } = Vue
+
+  var app = createApp({
+    data() {
+      return {
+        
+      }
+    }
+    }
+  )
+
+  app.component('hola-mundo', {
+    template: `
+      <div>
+        <h2>Componente básico</h2>
+        <p>Este es un componente básico</p>
+      </div>
+    `
+  })
+
+  app.mount('#app')
+</script>

@@ -1,0 +1,35 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+
+  <p>{{counter}}</p>
+  <label for="incrementCounter">Increment by</label>
+  <input type="number"
+         v-bind:value="incrementAmount"  // para conectar con una variable Vue
+         v-on:input="changeAmount">
+  <button v-on:click="incrementCounter">Increment Counter</button>
+
+</div>
+
+<script>
+  const { createApp } = Vue
+
+  const app = createApp({
+    data() {
+      return {
+        counter:10,
+        incrementAmount:1
+      }
+    },
+    methods:{
+      incrementCounter(){
+        this.counter++
+      },
+      changeAmount(){
+        this.counter += this.incrementAmount
+      }
+    }
+  })
+
+  app.mount('#app')
+</script>

@@ -1,0 +1,22 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+
+<p v-if="message.length%2===0">Longitud par: {{message}}</p>
+<p-else>Longitud impar: {{message}}</p>
+
+</div>
+
+<script>
+  const { createApp } = Vue
+
+  const app = createApp({
+    data() {
+      return {
+        message: 'Hello world'
+      }
+    }
+  })
+
+  app.mount('#app')
+</script>

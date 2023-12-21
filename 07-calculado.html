@@ -1,0 +1,31 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+
+  <p>Suma: {{ resultado }}</p>
+  
+  <input type="number" v-model='n1'>
+  <input type="number" v-model='n2'>
+  
+</div>
+
+<script>
+  const { createApp } = Vue
+
+  const app = createApp({
+    data() {
+      return {
+        n1:0,
+        n2:0
+      }
+    },
+    computed:{
+      resultado:function(){
+        return this.n1 +  this.n2
+      }
+      }
+    }
+  )
+
+  app.mount('#app')
+</script>

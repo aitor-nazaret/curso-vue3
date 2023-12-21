@@ -1,0 +1,38 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+<div id="app">
+
+  
+  <button :disabled="!verificarSeleccion()">Enviar</button>
+  
+
+
+  <select v-model="seleccionados" multiple style="width: 200px; height: 400px;">
+    <option v-for="animal in animales" :key="animal" :value="animal">
+      {{ animal }}
+    </option>
+  </select>
+  
+</div>
+
+<script>
+  const { createApp } = Vue
+
+  const app = createApp({
+    data() {
+      return {
+        animales: ['Perro', 'Gato', 'Pájaro', 'Conejo', 'Pez', 'Caracol', 'Tortuga', 'Cerdo', 'Vaca', 'Caballo', 'Canguro', 'Cocodrilo', 'Elefante', 'Jirafa', 'León', 'Mono', 'Oso', 'Panda', 'Ratón', 'Tigre', 'Zorro'],
+        seleccionados: []
+      }
+    },
+    methods:{
+      verificarSeleccion() {
+        return this.seleccionados.length === 3;
+  }
+      }
+    }
+  )
+
+  app.mount('#app')
+</script>

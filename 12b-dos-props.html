@@ -1,0 +1,30 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+  <hola-mundo :nombre='nombre' :apellido='apellido'></hola-mundo>
+</div>
+
+<script>
+  const { createApp } = Vue
+
+  var app = createApp({
+    data() {
+      return {
+        nombre: 'Aitor',
+        apellido: 'Garcia'
+      }
+    }
+  })
+
+  app.component('hola-mundo', {
+    props: ['nombre', 'apellido'],
+    template: `
+      <div>
+        <h2>Componente con props</h2>
+        <p>Hola <strong>{{nombre}} {{apellido}}</strong></p>
+      </div>
+    `
+  })
+
+  app.mount('#app')
+</script>

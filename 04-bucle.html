@@ -1,0 +1,23 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+
+    <ul>
+        <li v-for="number in listOfNumbers"> {{ number }} </li>
+    </ul>
+
+</div>
+
+<script>
+  const { createApp } = Vue
+
+  const app = createApp({
+    data() {
+      return {
+        listOfNumbers:[4,6,33,7,3]
+      }
+    }
+  })
+
+  app.mount('#app')
+</script>
